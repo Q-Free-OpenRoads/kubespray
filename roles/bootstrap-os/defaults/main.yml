@@ -4,3 +4,5 @@ pip_python_coreos_modules:
   - six
 
 override_system_hostname: true
+
+disable_swap: false

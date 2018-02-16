@@ -42,5 +42,5 @@
     filter: ansible_hostname
   when: ansible_os_family in ['CoreOS', 'Container Linux by CoreOS'] and hostname_changed.changed
 
-- import_tasks: swapoff.yml
-  when: ansible_swaptotal_mb > 0
+- include_tasks: swapoff.yml
+  when: disable_swap
