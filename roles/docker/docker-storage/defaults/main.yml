@@ -16,3 +16,6 @@ docker_container_storage_setup_pool_autoextend_percent: 20
 docker_container_storage_setup_device_wait_timeout: 60
 docker_container_storage_setup_wipe_signatures: false
 docker_container_storage_setup_container_root_lv_size: 40%FREE
+
+docker_use_overlayfs: false
+is_overlayfs_supported: false
