@@ -1,3 +1,8 @@
 [Service]
 Environment="DOCKER_OPTS={{ docker_options | default('') }} \
 --iptables=false"
+{% if ansible_os_family == "RedHat" and is_atomic -%}
+Environment="INSECURE_REGISTRY=\
+    {% for registry in docker_insecure_registries %}--insecure-registry={{ registry }} {% endfor %} \
+"
+{%- endif -%}
